@@ -4,30 +4,30 @@ public class Contador {
 	public static void main(String[] args) {
 		Scanner terminal = new Scanner(System.in);
 
-		System.out.println("Digite o primeiro parâmetro");
-		int parametroUm = terminal.nextInt();
+		System.out.println("Enter the first parameter");
+		int firstNum = terminal.nextInt();
 		
-		System.out.println("Digite o segundo parâmetro");
-		int parametroDois = terminal.nextInt();
+		System.out.println("Enter the second parameter");
+		int secondNum = terminal.nextInt();
 		
 		try {
 			//chamando o método contendo a lógica de contagem
-			contar(parametroUm, parametroDois);
+			contar(firstNum, secondNum);
 		
 		}catch (ParametrosInvalidosException exception) {
-			System.out.println("O primeiro parametro não deve ser maior que o segundo!");
+			System.out.println("The first parameter must not be greater than the second!");
 		}
 		
 	}
-	static void contar(int parametroUm, int parametroDois ) throws ParametrosInvalidosException {
-		if (parametroUm > parametroDois) {
+	static void contar(int firstNum, int secondNum ) throws ParametrosInvalidosException {
+		if (firstNum > secondNum) {
 			throw new ParametrosInvalidosException();
 		}
 		
-		int contagem = parametroDois - parametroUm;
+		int contagem = secondNum - firstNum;
 		
 		for(int i = 0; i < contagem; i++){
-			System.out.println("Imprimindo o número "+ (i+1));
+			System.out.println("printing number "+ (i+1));
 		}
 	}
 }
